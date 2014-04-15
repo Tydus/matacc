@@ -11,17 +11,17 @@ in Algorithm and Programming__, holding by Prof. __Mary Inaba__.
 ## What does it do
 It will do some benchmarks on acessing matrix, in many dimensions:
 ### Algorithms
-Total of 5 algorithms can be benchmarked:
+Total of 5 algorithms can be benchmarked:  
 1. ijloop  
-Access every cell, row first.
+Access every cell, row first.  
 2. jiloop  
-Access every cell, column first.
+Access every cell, column first.  
 3. row  
-Access only one row.
+Access only one row.  
 4. col  
-Access only one column.
+Access only one column.  
 5. diag  
-Access only the main diagonal.
+Access only the main diagonal.  
 
 ### Scale of Matrix
 It currently supports scale up to 1000x1000. Larger matrix will be supported later.
