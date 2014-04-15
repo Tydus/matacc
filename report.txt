@@ -1,0 +1,37 @@
+
+Test Results with N=1000 with 1000/1000000 iterations:
+
+$ ./test.sh 
+O0
+ijloop: 22700ns
+jiloop: 45200ns
+row   : 22.5ns
+col   : 44.5ns
+diag  : 44.8ns
+
+O1
+ijloop: 3600ns
+jiloop: 19200ns
+row   : 3.4ns
+col   : 19ns
+diag  : 19ns
+
+O2
+ijloop: 0ns
+jiloop: 0ns
+row   : 0ns
+col   : 0ns
+diag  : 0ns
+
+matacc.py
+ijloop: 399000ns
+jiloop: 532000ns
+row   : 414ns
+col   : 458ns
+diag  : 444ns
+
+Conclusion:
+1. single row/column and diagonal access is ~1000(N) time faster than full access.
+2. ij loop is faster than ji loop, mainly because of the memory structure of the 2d array, (a part of) the row can fit into the caches. row vs col/diag shows this too.
+3. O1 can optimize to ~230% speed(up to ~600% in row first access), guessing a register/cache friendly optimization(have't read asm yet), while O2(and O3) optimized out the whole loop!
+4. Python is very very very slow.
